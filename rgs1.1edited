@@ -1,0 +1,13 @@
+
+
+function Button() {
+  const [currValue, newValue] = useState(5);
+	return <button onClick={
+     () => newValue(currValue*2)
+    }>{currValue}</button>;
+}
+
+ReactDOM.render(
+  <Button />, 
+  document.getElementById('mountNode'),
+);
