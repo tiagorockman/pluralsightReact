@@ -2,10 +2,10 @@
 class Card extends React.Component {
   render(){
     return (
-    <div className="github-profile">
+    <div className="github-profile" style={{ margin: '1ren' }}>
         <img src="https://placehold.it/75" />
-        <div className="info">
-          <div className="name">Name Here...</div>
+        <div className="info" style={{display:'inline-block', marginLeft: 10}}>
+          <div className="name" style={{fontSize: '125%'}}>Name Here...</div>
           <div className="company">Company here..</div>
         </div>
       </div>
