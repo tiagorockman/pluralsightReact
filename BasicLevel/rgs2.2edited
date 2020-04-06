@@ -1,0 +1,38 @@
+//component to represent Card
+class Card extends React.Component {
+  render(){
+    return (
+    <div className="github-profile">
+        <img src="https://placehold.it/75" />
+        <div className="info">
+          <div className="name">Name Here...</div>
+          <div className="company">Company here..</div>
+        </div>
+      </div>
+      )
+  }
+}
+//component to represent List
+
+/* function was transformed in class
+const App = ({title}) => (
+  <div className="header">{title}</div>
+);
+*/
+class App extends React.Component{
+  // conceito constructor
+  // conceito palavra-chave this
+  render() {
+    return (
+      <div>
+           <div className="header">{this.props.title}</div>
+           <Card />
+      </div>
+      )
+  }
+}
+
+ReactDOM.render(
+	<App title="The GitHub Cards App" />,
+  mountNode,
+);
