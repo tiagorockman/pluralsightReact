@@ -1,0 +1,45 @@
+
+
+query TestQuery($currentUserName: String!, $includeRepos: Boolean!) {
+  github {
+    user(username: $currentUserName) {
+      githubid: id
+      company
+      avatar_url
+      repos @include(if: $includeRepos) {
+        name
+        owner {
+          login
+        }
+      }
+    }
+  }
+}
+
+query ListOfComent {
+  github {
+    repo(name: "curso-angular", ownerUsername: "tiagorockman") {
+      commits {
+        message
+        date
+      }
+    }
+  }
+}
+
+query TwoUsers($userName1: String!, $userName2: String!) {
+  github {
+    user1: user(username: $userName1) {
+      ...UserInformation
+    }
+    user2: user(username: $userName2) {
+      ...UserInformation
+    }
+  }
+}
+
+fragment UserInformation on GithubUser {
+  id
+  company
+  avatar_url
+}
